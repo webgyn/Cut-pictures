@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>好乐学-好老师带你快乐学</title>
+    <link rel="icon" href="https://static.haolexue100.com/hlx/images/favicon.ico?v=1121" type="image/x-icon">
+    <link href="https://static.haolexue100.com/hlx/images/favicon.ico?v=1121" type="image/x-icon" rel="shortcut icon">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://static.haolexue100.com/hlx/images/logo-apple/logo57X57.png?v=1121" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://static.haolexue100.com/hlx/images/logo-apple/logo72X72.png?v=1121">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://static.haolexue100.com/hlx/images/logo-apple/logo76X76.png?v=1121">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://static.haolexue100.com/hlx/images/logo-apple/logo114X114.png?v=1121" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://static.haolexue100.com/hlx/images/logo-apple/logo120X120.png?v=1121">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://static.haolexue100.com/hlx/images/logo-apple/logo144X144.png?v=1121">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://static.haolexue100.com/hlx/images/logo-apple/logo152X152.png?v=1121">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://static.haolexue100.com/hlx/images/logo-apple/logo180X180.png?v=1121">
+    <link rel="stylesheet" href="https://static.haolexue100.com/wap_hlx/frozenui-1.3/css/frozen.css?v=1121">
+    <link rel="stylesheet" href="https://static.haolexue100.com/css/font-awesome.css?v=1121">
+    <script src="https://static.haolexue100.com/wap_hlx/frozenui-1.3/lib/zepto.new.min.js?v=1121"></script>
+    <script src="https://static.haolexue100.com/wap_hlx/frozenui-1.3/js/frozen.js?v=1121"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        function showError(content) {
+            var dia = $.dialog({
+                content:content,
+                button:["确认"]
+            });
+            dia.on("dialog:action",function(e){});
+            dia.on("dialog:hide",function(e){});
+        }
+        var _hmt = _hmt || [];
+        var doMain = {
+            'www': 'https://www.haolexue100.com/',
+            'static': 'https://static.haolexue100.com/',
+            'atth': 'https://atth.haolexue100.com/',
+            'api' : 'https://api.haolexue100.com/',
+            'mobile': 'https://m.haolexue100.com/'
+        };
+    </script>        
+    <link rel="stylesheet" href="https://static.haolexue100.com/wap_hlx/frozenui-1.3/wap/css.css?v=1121">
+    <!-- 修改头像新加css代码 -->
+    <style>
+     /* 我的页面 */
+    .bg-gray{background:#f2f2f2;}
+    .userBg{float:left;width:100%;height:210px;-webkit-filter: blur(3px); -moz-filter: blur(3px);-o-filter: blur(3px);-ms-filter: blur(3px);filter: blur(3px);}
+    .userpic{ width:100%;position: absolute;top:115px;left:0;padding:0 20px;}
+    .userpic strong{display: inline-block;float:left;border: 2px solid #fff; border-radius: 50%; width: 75px; height: 75px;margin-right:18px;}
+    .userpic strong img{border-radius:50%;display: block; width: 100%; height: 100%;}
+    .userpic p{padding-top:5px;}
+    .userpic .username{font-weight: 600;height:35px;line-height: 35px;font-size:22px;color:#fff;}
+    .userpic .usercoin img{width:20px;}
+    .userpic .usercoin img.info{width:18px;height:22px;position:relative;top:1px;}
+    .userpic .usercoin i{font-weight: normal;position: relative;top:-5px;left:5px;font-size: 18px;font-size:14px;color:#fff;margin-right:23px;}
+    .userpic .usersetting{position: absolute;top:20px;right:56px;}
+    .userpic .usersetting img{width:26px;height:28px;}
+    .myErrBtn{padding-top:210px;}
+    .myErrBtn .ui-arrowlink{height:45px;background:#fff;line-height: 45px;padding:0 20px;font-size:17px;}
+    .myErrBtn img{width:17px;position: relative;top:3px;}
+    .ui-form{background: none;}
+    .ui-form-item a{color:#e6261d;}
+    /* 个人设置 */
+    .settingPage{width:100%;height:100%;background:#f2f2f2;display: none;position: fixed;left:0;top:0;z-index:100;}
+    .settingPage ul li{margin:0;padding:0 40px 0 12px;font-size:17px;;border:none;height:45px;line-height:45px;background:#fff;border-bottom:1px solid #e5e5e5;position: relative;}
+    .settingPage ul li.updateImg:before{font-family:"iconfont" !important;font-size:32px;line-height: 44px;font-style:normal;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:0.2px;display:block;color:#c7c7c7;content:"";position:absolute;right: 5px;top: 50%;margin-top: -22px;margin-left: -10px;}
+    .settingPage ul li strong{font-weight: normal;float: right;}
+    .settingPage ul li.updateImg{height:65px;line-height: 65px;position: relative;}
+    .settingPage ul li.updateImg img{width:37px;height:37px;border-radius: 50%;float: right;position: relative;top:14px;}
+    .settingPage ul li.updateImg input{position: absolute;width:100%;height: 65px;top: 0;left: 0;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;  opacity: 0;}
+    .settingPage p{text-align: right;color:#666;padding:15px 15px 0 0;font-size:12px;}
+     /* 修改头像 */
+    .clipbg{position: fixed;background: black;top: 0;z-index: 999;width: 100%;height: 100%;left: 0;display: none;padding-bottom:50px;}
+    .clipbg #clipArea{width: 100%;height: 100%;margin: auto;}
+    .cutcover{display: none;width:100%;height:50px;position: fixed;left: 0;bottom: 0;text-align: center;z-index:1000;background: #000;}
+    .cutcover div{width:50%;float: left;color:#fff;text-align: center;height:50px;line-height:50px;background:rgba(0,0,0,0.7);font-size:16px;}
+    .cutcover div#clipBtn{color:#31a539;}
+    .uploadCover,.updateCover,.errorCover{width:100%;height:100%;background: rgba(0,0,0,0.5);position: fixed;left:0;top:0;z-index:1000;display: none;}
+    .uploadCover .loadimg,.updateCover .updateimg{width:120px;height:120px;background:rgba(0,0,0,0.7);position: absolute;left:0;top:0;bottom:0;right:0;margin:auto;border-radius:10px;}
+    .uploadCover .loadimg span,.updateCover .updateimg span{display: inline-block;width:120px;text-align: center;color:#fff;font-size:14px;padding-top:76px;}
+    .uploadCover img{display:block;width:46px;height:46px;position: absolute;left:50%;top:50%;margin:-38px 0 0 -23px;}
+    .uploadCover img {-webkit-transform: rotate(360deg); animation: rotation 2s linear infinite;-moz-animation: rotation 2s linear infinite;-webkit-animation: rotation 2s linear infinite;-o-animation: rotation 2s linear infinite;}
+    @-webkit-keyframes rotation{
+        from {-webkit-transform: rotate(0deg);}
+        to {-webkit-transform: rotate(360deg);}
+    }
+    .updateCover img{display:block;width:55px;height:40px;position: absolute;left:50%;top:50%;margin:-38px 0 0 -24px;}
+    .errorCover .errorBox{width:300px;height:150px;border-radius:10px;background:#fff;position: absolute;left:0;top:0;bottom:0;right:0;margin:auto;text-align: center;font-size:18px;}
+    .errorCover .errorBox p{border-bottom: 1px solid #cecece;font-size:18px;height:90px;line-height: 90px;}
+    .errorCover .errorBox span{display:block;height:59px;line-height:59px;color:#516485;}
+    </style>
+</head>
+<body class="bg-gray" ontouchstart>
+    <section class="ui-container" style="padding-bottom: 80px;">
+            <!-- 修改头像代码以下 -->
+        <div class="userBg" style="background:rgba(0,0,0,0.3) url(https://atth.haolexue100.com/user/201903/87a09b65c8f684e7.jpg) no-repeat center center/100%"></div>
+        <div class="userpic">
+            <strong><img src="https://atth.haolexue100.com/user/201903/87a09b65c8f684e7.jpg" alt=""/></strong>
+            <p class="username">高星星</p>
+                                                                            <!-- 若没有地区年级，则city图标和地区年级不展示 -->
+            <p class="usercoin"><img src="images/usercoin.png" /><i>3453</i><img src="images/city.png" class="info"/><i>北京-初二</i></p>
+            <span class="usersetting"><img  src="images/setting.png" alt=""></span>
+        </div>
+        <div class="demo-block myErrBtn">
+            <a data-href="https://m.haolexue100.com/my/planner" class="redirect">
+                <div class="ui-arrowlink">
+                    <img src="images/tel.png" alt="">我的规划师
+                </div>
+            </a>
+        </div>
+        <div class="ui-form loginOutBtn">
+            <div class="ui-form-item text-center">
+                <a class="redirect" data-href="https://m.haolexue100.com/logout/index">
+                    退出登录
+                </a>
+            </div>
+        </div>
+        <!-- 修改头像代码以上 -->
+    </section>
+    <footer class="ui-footer ui-footer-btn" style="z-index:10;">
+        <ul class="ui-tiled ui-border-t">
+            <li class="redirect"><a href="https://m.haolexue100.com/my/index?r=1555380413"><div class="foot-btn1">学习</div></a></li>
+            <li class="redirect"><a href="https://m.haolexue100.com/course/index?r=1555380413"><div class="foot-btn2">直播课</div></a></li>
+            <li class="redirect on"><a href="https://m.haolexue100.com/my/account?r=1555380413"><div class="foot-btn3">我的</div></a></li>
+        </ul>
+    </footer>
+    <div class="clipbg displaynone" style="">
+        <div id="clipArea" style="user-select: none; overflow: hidden; position: relative;">
+            <div class="photo-clip-layer" style="position: absolute; left: 50%; top: 50%; width: 300px; height: 300px; margin-left: -150px; margin-top: -150px;">
+                <div class="photo-clip-move-layer" style="transform-origin: 0px 0px; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) scale(1) translateZ(0px); width: 0px; height: 0px;">
+                    <div class="photo-clip-rotation-layer"></div>
+                </div>
+            </div>
+            <div class="photo-clip-mask" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; pointer-events: none;">
+                <div class="photo-clip-mask-left" style="position: absolute; left: 0px; right: 50%; top: 50%; bottom: 50%; width: auto; background-color: rgba(0, 0, 0, 0.5); margin-right: 150px; margin-top: -150px; margin-bottom: -150px;"></div>
+                <div class="photo-clip-mask-right" style="position: absolute; left: 50%; right: 0px; top: 50%; bottom: 50%; background-color: rgba(0, 0, 0, 0.5); margin-left: 150px; margin-top: -150px; margin-bottom: -150px;"></div>
+                <div class="photo-clip-mask-top" style="position: absolute; left: 0px; right: 0px; top: 0px; bottom: 50%; background-color: rgba(0, 0, 0, 0.5); margin-bottom: 150px;"></div>
+                <div class="photo-clip-mask-bottom" style="position: absolute; left: 0px; right: 0px; top: 50%; bottom: 0px; background-color: rgba(0, 0, 0, 0.5); margin-top: 150px;"></div>
+                <div class="photo-clip-area" style="border: 2px dashed rgb(221, 221, 221); position: absolute; left: 50%; top: 50%; width: 300px; height: 300px; transform: translate(-50%, -50%);"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cutcover">
+        <div class="back">取消</div>
+        <div id="clipBtn">选取</div>
+    </div>
+    <div class="settingPage">
+        <ul>
+            <li><span>姓名</span><strong>高星星</strong></li>
+            <li class="updateImg"><span>头像</span><img src="https://atth.haolexue100.com/user/201903/87a09b65c8f684e7.jpg" alt=""/><input type="file" id="file" accept="image/*" onchange="changepic(this)"></li>
+        </ul>
+        <p>如需修改姓名，请联系你的学习规划师</p>
+    </div>
+    <div class="uploadCover">
+        <div class="loadimg"><span>上传中</span></div>
+        <img src="../images/loading.png" alt="">
+    </div>
+    <div class="updateCover">
+        <div class="updateimg"><span>修改成功</span></div>
+        <img src="../images/success.png" alt="">
+    </div>
+    <div class="errorCover">
+        <div class="errorBox">
+            <p>系统繁忙，请稍后再试</p>
+            <span>确定</span>
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/hammer.min.js"></script> 
+    <script type="text/javascript" src="../js/lrz.all.bundle.js"></script> 
+    <script type="text/javascript" src="../js/iscroll-zoom-min.js"></script> 
+    <script type="text/javascript" src="../js/PhotoClip.js"></script>
+    <script>
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.indexOf("android") > 0) {
+            $("#file").attr("capture","camera");
+        } else if(ua.indexOf("ios") > 0) {
+        	$("#file").removeAttr("capture");
+        } 
+        $('body').append('<p>'+$("#file")+'</p>');
+        var ImgFlag=true;
+        var clipArea = new  PhotoClip("#clipArea", {
+            size: [300, 300],//裁剪框大小
+            outputSize:[0,0],//打开图片大小，[0,0]表示原图大小
+            file: "#file",
+            ok: "#clipBtn",
+            loadStart: function() { //图片开始加载的回调函数。this 指向当前 PhotoClip 的实例对象，并将正在加载的 file 对象作为参数传入。（如果是使用非 file 的方式加载图片，则该参数为图片的 url）
+                $(".uploadCover").show();
+
+            },
+            loadComplete: function() {//图片加载完成的回调函数。this 指向当前 PhotoClip 的实例对象，并将图片的 <img> 对象作为参数传入。
+                $(".uploadCover").hide();
+            },
+            
+            done: function(dataURL) { //裁剪完成的回调函数。this 指向当前 PhotoClip 的实例对象，会将裁剪出的图像数据DataURL作为参数传入。
+                if(ImgFlag){
+                    $('.uploadCover').show();
+                    ImgFlag=false;
+                    var data=dataURL;
+                    data=window.btoa(encodeURIComponent(data));
+                    data=decodeURIComponent(window.atob(data));
+                    // $.ajax({
+                    //     url:'',
+                    //     type:"POST",
+                    //     data:{data:data},
+                    //     success:function(res){
+                    //         if(errcode=='0'){
+                    //             ImgFlag=true;
+                    //             $('.uploadCover').hide();
+                    //             $('.updateCover').show();
+                    //             setTimeout(function(){
+                    //             $('.settingPage ul li.updateImg img').attr('src',res.data.msg.avatar);
+                    //             $('.userpic strong img').attr('src',res.data.msg.avatar);
+                    //             $('.userBg').css('background-img',res.data.msg.avatar);
+                    //                 $(".clipbg").hide();
+                    //                 $('.cutcover').hide();
+                    //                 $('.updateCover').hide();
+                    //             },2000)
+                    //         }
+                    //     },
+                    //     fail:function(){
+                    //             $('.errorCover').show();
+                    //     }
+                    // });
+                    setTimeout(function(){
+                        $('.settingPage ul li.updateImg img').attr('src',res.data.msg.avatar);
+                        $('.userpic strong img').attr('src',res.data.msg.avatar);
+                        $('.userBg').css('background-img',res.data.msg.avatar);
+                        $(".clipbg").hide();
+                        $('.cutcover').hide();
+                        $('.updateCover').hide();
+                    },2000)
+                }
+            }
+        });
+        $(".back").on("touchend",function () {
+            $(".clipbg").hide();
+            $('.cutcover').hide();
+        });
+        function changepic() {
+            $(".clipbg").show();
+            $('.cutcover').show();
+        }
+        $(".usersetting").on("touchend",function () {
+            $('.settingPage').show();
+        });
+        $(".errorCover .errorBox span").on("touchend",function () {
+            $('.errorCover').hide();
+        });
+    </script>
+</body>
+</html>
